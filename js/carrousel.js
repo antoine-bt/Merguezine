@@ -32,7 +32,8 @@ class Carrousel {
 
         const img = carte.querySelector("img");
         if (img) {
-            img.src = `mangas-carrousel/${nom}/${img.getAttribute("src")}`;
+            const fichier = img.getAttribute("src").split("/").pop();
+            img.src = `mangas-carrousel/${nom}/${fichier}`;
         }
 
         this.track.appendChild(carte);
