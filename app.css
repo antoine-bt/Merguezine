@@ -24,6 +24,34 @@ main {
     z-index: 1;
 }
 
+.telechargement-merguezine {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--pourpre);
+    color: var(--clair);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    box-shadow: 0 6px 24px rgba(124, 31, 29, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    text-decoration: none;
+}
+
+.telechargement-merguezine:hover {
+    background-color: var(--rouge-vif);
+    color: var(--clair);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(124, 31, 29, 0.5);
+}
+
+.telechargement-merguezine:active {
+    transform: translateY(0px);
+    box-shadow: 0 4px 12px rgba(124, 31, 29, 0.3);
+}
+
 .dark-text{
     color: var(--sombre)
 }
@@ -141,6 +169,11 @@ footer img {
     }
     .presentation p + p::before {
         margin-bottom: 1.2rem;
+    }
+
+    .telechargement-merguezine {
+        font-size: 0.95rem;
+        padding: 0.85rem 1.8rem;
     }
 }
 
