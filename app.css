@@ -130,6 +130,63 @@ footer img {
     animation: tomber linear infinite;
 }
 
+#accordionPresentation .accordion-item,
+#accordionPresentationMerguez .accordion-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#accordionPresentation .accordion-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('images/fond-all-star.png');
+    background-size: cover;
+    background-position: bottom;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+#accordionPresentationMerguez .accordion-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('images/fond-all-star.png');
+    background-size: cover;
+    background-position: bottom;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+#accordionPresentation .accordion-item:has(.collapse.show)::before,
+#accordionPresentationMerguez .accordion-item:has(.collapse.show)::before {
+    opacity: 0.1;
+}
+
+#accordionPresentation .accordion-item > *,
+#accordionPresentationMerguez .accordion-item > * {
+    position: relative;
+    z-index: 1;
+}
+
+.accordion-button.collapsed {
+    border-left: 0.2em solid var(--pourpre);
+    padding-left: 1rem;
+    transition: opacity 0.2s ease;
+}
+
+.accordion-button.collapsed::after {
+    animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(4px); }
+}
+
 .presentation {
     max-width: 82em;
     margin: 0 auto;
@@ -404,6 +461,13 @@ footer img {
 
     .carte-texte p {
         font-size: 0.85rem;
+    }
+
+    #accordionPresentation .accordion-item::before,
+    #accordionPresentationMerguez .accordion-item::before {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 }
 
